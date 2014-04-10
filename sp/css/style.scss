@@ -1,0 +1,243 @@
+$headerBorderColor: #e0e0e0;
+$postBorderColorDark: #e7e7e7;
+$postBorderColorLight: #efefef;
+
+$boxShadowColorLight: #e5e5e5;
+$boxShadowColorDark: #d7d7d7;
+
+$fontDroid: 'DroidSansRegular';
+$fontShelly: 'ShellyAllegroCRegular';
+$fontTex: 'TeXGyreAdventorRegular';
+$fontJura: 'JuraMedium';
+
+$colorText: #a2a2a2;
+$colorHeaderLink: #646464;
+$colorPostMeta: #565656;
+$colorPostTitle: #888788;
+$colorLinks: #a772de;
+
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: top;
+  outline: none;
+}
+html { height: 101%; } /* always display scrollbars */
+body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; } 
+
+input { outline: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+a { text-decoration: none; }
+
+
+/*
+	Init properties
+*/
+
+body{
+	background: url('../images/greyzz.png');
+}
+
+.b-header, .b-content, .b-footer{
+	width: 100%;
+	clear: both;
+	margin: auto;
+}
+
+.b-content{
+	padding: 40px 0;
+}
+
+.logo-wrap, .header-menu, .content, .footer{
+	width: 940px;
+	clear: both;
+	margin: auto;
+}
+
+.header{
+	background: #fff;
+	box-shadow: 0 0 1px 1px $boxShadowColorLight;
+}
+
+.logo-wrap{
+	text-align: center;
+	border-bottom: 1px solid $postBorderColorLight;
+	padding: 40px 0;
+}
+
+.logo-link{
+	font-size: 26px;
+	font-family: $fontTex;
+	margin-bottom: 10px;
+	color: #757575;
+}
+
+.logo-description{
+	font-family: $fontShelly;
+	font-size: 20px;
+}
+
+.header-menu-list{
+	padding: 20px 0;
+}
+
+.header-menu-list li{
+	display: inline;
+	margin-right: 20px;
+}
+
+.header-menu-list li:last-child{
+	margin-right: 0;
+}
+
+.header-menu-list li a{
+	font-size: 16px;
+	font-family: $fontDroid;
+	color: $colorHeaderLink;
+}
+
+.content-list-item{
+	display: block;
+	float: left;
+	margin: 0 20px 20px 0;
+	width: 300px;
+	background: #fff;
+	box-shadow: 0 0 1px 1px $boxShadowColorDark;
+}
+
+.content-list-item:nth-child(3n) {
+	margin-right: 0;
+}
+
+
+.content-list-item-title{
+	margin-bottom: 20px;
+}
+
+.content-list-item-title-link{
+	font-size: 24px;
+	font-family: $fontTex;
+	color: $colorPostTitle;
+}
+
+.content-list-item-text{
+	font-size: 14px;
+	font-family: $fontDroid;
+	line-height: 24px;
+	color: $colorText;
+	margin-bottom: 20px;
+}
+
+.more-link{
+	font-size: 14px;
+	color: $colorLinks;
+	text-decoration: underline;
+	float: right;
+	font-family: $fontDroid;	
+	margin-bottom: 20px;
+}
+
+.content-list-item-category-wrap, .content-list-item-tags-wrap{
+	clear: both;
+}
+
+
+.content-list-item-meta-title, .content-list-item-category-wrap a, .content-list-item-tags-wrap a{
+	font-family: $fontDroid;
+	font-size: 14px;
+	line-height: 24px;
+	color: #737373;
+	display: inline;
+}
+
+.content-list-item-category-wrap a, .content-list-item-tags-wrap a{
+	color: #a2a2a2;
+}
+
+.padding-wrap{
+	padding: 20px;
+}
+
+.cntent-list-item-meta-wrap{
+	width: 100%;
+	background: #fcfcfc;
+	overflow: hidden;
+	border-top: 1px solid $postBorderColorDark;
+}
+
+.cntent-list-item-meta-wrap span{
+	display: block;
+	float: left;
+	width: 100px;
+	text-align: center;
+	font-size: 12px;
+	color: $colorPostMeta;
+	padding: 24px 0;
+}
+
+.content-list-item-meta-comments, .content-list-item-meta-views{
+	width: 99px !important;
+	border-right: 1px solid $postBorderColorLight;
+}
+
+.post-arrow{
+	border-right: 10px solid #000;
+	border-top: 10px solid transparent;
+	border-left: 10px solid transparent;
+	position: absolute;
+}
+
+/*
+	web fonts
+*/
+
+@font-face {
+    font-family: 'TeXGyreAdventorRegular';
+    src: url('../fonts/texgyreadventor-regular.eot');
+    src: url('../fonts/texgyreadventor-regular.eot') format('embedded-opentype'),
+         url('../fonts/texgyreadventor-regular.woff') format('woff'),
+         url('../fonts/texgyreadventor-regular.ttf') format('truetype'),
+         url('../fonts/texgyreadventor-regular.svg#TeXGyreAdventorRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'JuraMedium';
+    src: url('../fonts/jura-medium.eot');
+    src: url('../fonts/jura-medium.eot') format('embedded-opentype'),
+         url('../fonts/jura-medium.woff') format('woff'),
+         url('../fonts/jura-medium.ttf') format('truetype'),
+         url('../fonts/jura-medium.svg#JuraMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'DroidSansRegular';
+    src: url('../fonts/droidsans.eot');
+    src: url('../fonts/droidsans.eot') format('embedded-opentype'),
+         url('../fonts/droidsans.woff') format('woff'),
+         url('../fonts/droidsans.ttf') format('truetype'),
+         url('../fonts/droidsans.svg#DroidSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'ShellyAllegroCRegular';
+    src: url('../fonts/shelly.eot');
+    src: url('../fonts/shelly.eot') format('embedded-opentype'),
+         url('../fonts/shelly.woff') format('woff'),
+         url('../fonts/shelly.ttf') format('truetype'),
+         url('../fonts/shelly.svg#ShellyAllegroCRegular') format('svg');
+}
