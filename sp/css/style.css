@@ -74,10 +74,12 @@ body {
   border-bottom: 1px solid #efefef;
   padding: 40px 0; }
 
+.logo {
+  margin-bottom: 10px; }
+
 .logo-link {
   font-size: 26px;
   font-family: "TeXGyreAdventorRegular";
-  margin-bottom: 10px;
   color: #757575; }
 
 .logo-description {
@@ -105,7 +107,8 @@ body {
   margin: 0 20px 20px 0;
   width: 300px;
   background: #fff;
-  box-shadow: 0 0 1px 1px #d7d7d7; }
+  box-shadow: 0 0 1px 1px #d7d7d7;
+  position: relative; }
 
 .content-list-item:nth-child(3n) {
   margin-right: 0; }
@@ -116,7 +119,8 @@ body {
 .content-list-item-title-link {
   font-size: 24px;
   font-family: "TeXGyreAdventorRegular";
-  color: #888788; }
+  color: #888788;
+  font-weight: thin; }
 
 .content-list-item-text {
   font-size: 14px;
@@ -155,24 +159,74 @@ body {
   overflow: hidden;
   border-top: 1px solid #e7e7e7; }
 
-.cntent-list-item-meta-wrap span {
+.cntent-list-item-meta {
   display: block;
   float: left;
   width: 100px;
   text-align: center;
   font-size: 12px;
   color: #565656;
-  padding: 24px 0; }
+  padding: 24px 0;
+  font-family: 'fontello'; }
 
 .content-list-item-meta-comments, .content-list-item-meta-views {
   width: 99px !important;
   border-right: 1px solid #efefef; }
 
 .post-arrow {
-  border-right: 10px solid #000;
-  border-top: 10px solid transparent;
-  border-left: 10px solid transparent;
-  position: absolute; }
+  border-right: 20px solid #fff;
+  border-top: 20px solid transparent;
+  position: absolute;
+  left: 20px;
+  z-index: 1;
+  width: 0;
+  height: 0; }
+
+.b-footer {
+  background: #874464;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  bottom: 0; }
+
+.footer {
+  height: 300px; }
+
+.footerBottom {
+  bottom: 0; }
+
+.footer-navigate {
+  display: block;
+  width: 52px;
+  height: 36px;
+  margin: auto;
+  background: #874464;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  font: 16px/34px 'fontello'; }
+
+.footer-navigate:after {
+  content: '\e813'; }
+
+.footer-navigate-wrap {
+  width: 100%;
+  position: absolute;
+  bottom: 300px; }
+
+.content-list-item-meta-comments:after {
+  content: '\e805';
+  margin-left: 10px; }
+
+.content-list-item-meta-views:after {
+  content: '\e803';
+  margin-left: 10px; }
+
+.content-list-item-meta-likes:after {
+  content: '\e800';
+  margin-left: 10px; }
 
 /*
 	web fonts
@@ -193,3 +247,13 @@ body {
   font-family: 'ShellyAllegroCRegular';
   src: url("../fonts/shelly.eot");
   src: url("../fonts/shelly.eot") format("embedded-opentype"), url("../fonts/shelly.woff") format("woff"), url("../fonts/shelly.ttf") format("truetype"), url("../fonts/shelly.svg#ShellyAllegroCRegular") format("svg"); }
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/fontello.eot?48529301");
+  src: url("../fonts/fontello.eot?48529301#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?48529301") format("woff"), url("../fonts/fontello.ttf?48529301") format("truetype"), url("../fonts/fontello.svg?48529301#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'fontello';
+  src: url("../fonts/droidsans.eot");
+  src: url("../fonts/droidsans.eot") format("embedded-opentype"), url("../fonts/droidsans.woff") format("woff"), url("../fonts/droidsans.ttf") format("truetype"), url("../fonts/droidsans.svg#DroidSansRegular") format("svg"); }
