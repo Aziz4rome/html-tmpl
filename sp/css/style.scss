@@ -13,7 +13,7 @@ $fontJura: 'JuraMedium';
 $colorText: #a2a2a2;
 $colorHeaderLink: #646464;
 $colorPostMeta: #565656;
-$colorPostTitle: #888788;
+$colorPostTitle: #606060;
 $colorLinks: #a772de;
 
 
@@ -69,6 +69,10 @@ body{
 	margin: auto;
 }
 
+.content{
+	width: 944px;
+}
+
 .header{
 	background: #fff;
 	box-shadow: 0 0 1px 1px $boxShadowColorLight;
@@ -120,7 +124,7 @@ body{
 	margin: 0 20px 20px 0;
 	width: 300px;
 	background: #fff;
-	box-shadow: 0 0 1px 1px $boxShadowColorDark;
+	box-shadow: 0 1px 1px 0 $boxShadowColorDark;
 	position: relative;
 }
 
@@ -134,8 +138,8 @@ body{
 }
 
 .content-list-item-title-link{
-	font-size: 24px;
-	font-family: $fontTex;
+	font-size: 28px;
+	font-family: 'WebServeroffRegular';
 	color: $colorPostTitle;
 	font-weight: thin;
 }
@@ -155,6 +159,11 @@ body{
 	float: right;
 	font-family: $fontDroid;	
 	margin-bottom: 20px;
+}
+
+.content-list{
+	overflow: hidden;
+	padding: 0 2px;
 }
 
 .content-list-item-category-wrap, .content-list-item-tags-wrap{
@@ -209,6 +218,7 @@ body{
 	z-index: 1;
 	width: 0;
 	height: 0;
+	opacity: 0;
 }
 
 
@@ -321,4 +331,13 @@ body{
          url('../fonts/droidsans.woff') format('woff'),
          url('../fonts/droidsans.ttf') format('truetype'),
          url('../fonts/droidsans.svg#DroidSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'WebServeroffRegular';
+    src: url('../fonts/web_serveroff.eot');
+    src: url('../fonts/web_serveroff.eot') format('embedded-opentype'),
+         url('../fonts/web_serveroff.woff') format('woff'),
+         url('../fonts/web_serveroff.ttf') format('truetype'),
+         url('../fonts/web_serveroff.svg#WebServeroffRegular') format('svg');
 }

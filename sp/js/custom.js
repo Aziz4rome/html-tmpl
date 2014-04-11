@@ -6,7 +6,8 @@ $(document).ready(function() {
 			postImage = $('.content-list-item-image'),
 			top = postImage.height() - 20;
 		postArrow.animate({
-			top: top
+			top: top,
+			opacity: 1
 		});
 		window.footer = $('.footer'),
 		window.bFooter = footer.parent('.b-footer'),

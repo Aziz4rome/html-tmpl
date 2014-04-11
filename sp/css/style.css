@@ -65,6 +65,9 @@ body {
   clear: both;
   margin: auto; }
 
+.content {
+  width: 944px; }
+
 .header {
   background: #fff;
   box-shadow: 0 0 1px 1px #e5e5e5; }
@@ -107,7 +110,7 @@ body {
   margin: 0 20px 20px 0;
   width: 300px;
   background: #fff;
-  box-shadow: 0 0 1px 1px #d7d7d7;
+  box-shadow: 0 1px 1px 0 #d7d7d7;
   position: relative; }
 
 .content-list-item:nth-child(3n) {
@@ -117,9 +120,9 @@ body {
   margin-bottom: 20px; }
 
 .content-list-item-title-link {
-  font-size: 24px;
-  font-family: "TeXGyreAdventorRegular";
-  color: #888788;
+  font-size: 28px;
+  font-family: 'WebServeroffRegular';
+  color: #606060;
   font-weight: thin; }
 
 .content-list-item-text {
@@ -136,6 +139,10 @@ body {
   float: right;
   font-family: "DroidSansRegular";
   margin-bottom: 20px; }
+
+.content-list {
+  overflow: hidden;
+  padding: 0 2px; }
 
 .content-list-item-category-wrap, .content-list-item-tags-wrap {
   clear: both; }
@@ -180,7 +187,8 @@ body {
   left: 20px;
   z-index: 1;
   width: 0;
-  height: 0; }
+  height: 0;
+  opacity: 0; }
 
 .b-footer {
   background: #874464;
@@ -257,3 +265,7 @@ body {
   font-family: 'fontello';
   src: url("../fonts/droidsans.eot");
   src: url("../fonts/droidsans.eot") format("embedded-opentype"), url("../fonts/droidsans.woff") format("woff"), url("../fonts/droidsans.ttf") format("truetype"), url("../fonts/droidsans.svg#DroidSansRegular") format("svg"); }
+@font-face {
+  font-family: 'WebServeroffRegular';
+  src: url("../fonts/web_serveroff.eot");
+  src: url("../fonts/web_serveroff.eot") format("embedded-opentype"), url("../fonts/web_serveroff.woff") format("woff"), url("../fonts/web_serveroff.ttf") format("truetype"), url("../fonts/web_serveroff.svg#WebServeroffRegular") format("svg"); }
