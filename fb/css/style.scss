@@ -11,7 +11,7 @@ $borderColorLight  : #d9d9d9;
 $borderColorMedium : #8a8a8a;
 $borderColorDark   : #464646;
 
-$colorLinkHover : #ff3030;
+$colorLinkHover : #303030;
 
 @mixin transition($transition) {
 	-webkit-transition: $transition;  
@@ -127,7 +127,7 @@ body{
 }
 
 .link-bg{
-	background: #ff3030;
+	background: $colorLinkHover;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -172,6 +172,14 @@ body{
 	float: left;
 }
 
+.content-list li p{
+	color: $colorText + #777;
+	font-family: $fontTitle;
+	font-size: 16px;
+	text-align: center;
+	padding: 20px;
+}
+
 .image-wrap{
 	position: relative;	
 	z-index: 1;
@@ -193,10 +201,10 @@ body{
 	top: 0;
 	left: 0;
 	z-index: 0;
-	background: #ff3030;
-	@include rotateY(180deg);
+	background: $colorLinkHover;
 	@include transition(1s);
 	@include inner-shadow(0, 0, 120px, 40px, 0.1);
+	overflow: hidden;
 }
 
 .link, .zoom{
@@ -204,17 +212,11 @@ body{
 	width: 40px;
 	height: 40px;
 	position: absolute;
-	border: 1px solid rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.6);
 	background: rgba(255, 255, 255, 0.6);
-	top: 50%;
-}
-
-.link{
-	left: 20px;
-}
-
-.zoom{
-	right: 20px;
+	font: 16px/40px 'fontello';
+	text-align: center;
+	color: #fff;
 }
 
 .copyright{
@@ -271,6 +273,14 @@ body{
 
 .g:after{
 	content: '\e810';
+}
+
+.link:after{
+	content: '\e804';
+}
+
+.zoom:after{
+	content: '\e80b';
 }
 
 .social-passive {
