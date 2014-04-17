@@ -102,7 +102,34 @@ $(document).ready(function() {
 		currentBg.stop().animate({
 			width: 0
 		}, 300);
-	})
+	});
+
+
+	$('.content-list-item-inner-wrap').on('mouseover', function() {
+		var $this = $(this),
+			forwardFace = $this.find('.image-wrap'),
+			backFace = $this.find('.meta-wrap');
+		forwardFace.stop().css({
+			transform: 'rotateY(180deg)',
+			zIndex: 1
+		});
+		backFace.stop().css({
+			transform: 'rotateY(0deg)',
+			zIndex: 2
+		});
+	}).on('mouseleave', function() {
+		var $this = $(this),
+			forwardFace = $this.find('.image-wrap'),
+			backFace = $this.find('.meta-wrap');
+			forwardFace.stop().css({
+			transform: 'rotateY(0deg)',
+			zIndex: 2
+		});
+			backFace.stop().css({
+			transform: 'rotateY(180deg)',
+			zIndex: 1
+		});
+	});
 
 
 });
