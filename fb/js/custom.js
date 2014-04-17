@@ -61,4 +61,48 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		masonry();
 	});
+
+
+	var socialList = $('.social-list'),
+		socialItems = socialList.find('li'),
+		speed = 200;
+	socialItems.on('mouseover', function() {
+		var $this = $(this),
+			socialPassive = $this.find('.social-passive'),
+			socialActive = $this.find('.social-active');
+		socialPassive.stop().animate({
+			top: -40
+		});
+		socialActive.stop().animate({
+			top: 0
+		}, speed);
+	}).on('mouseleave', function() {
+		var $this = $(this),
+			socialPassive = $this.find('.social-passive'),
+			socialActive = $this.find('.social-active');
+		socialPassive.stop().animate({
+			top: 0
+		}, speed);
+		socialActive.stop().animate({
+			top: 40
+		});
+	});
+
+	var navList = $('.header-menu'),
+		navLink = navList.find('a');
+	navLink.on('mouseover', function() {
+		var $this = $(this),
+			currentBg = $this.siblings('.link-bg');
+		currentBg.stop().animate({
+			width: '100%'
+		}, 300);
+	}).on('mouseleave', function() {
+		var $this = $(this),
+			currentBg = $this.siblings('.link-bg');
+		currentBg.stop().animate({
+			width: 0
+		}, 300);
+	})
+
+
 });
