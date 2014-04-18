@@ -33,6 +33,12 @@ $colorLinkHover : #303030;
 	box-shadow:         inset $x $y $blur $spread rgba(255, 255, 255, $alpha);
 }
 
+@mixin drop-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow:	$x $y $blur $spread rgba(0, 0, 0, $alpha);
+	-moz-box-shadow:	$x $y $blur $spread rgba(0, 0, 0, $alpha);
+	box-shadow:		$x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -166,7 +172,7 @@ body{
 	height: 100%;
 }
 
-.content-list li{
+.content-list-masonry li{
 	width: 25%;
 	display: block;
 	float: left;
@@ -178,7 +184,7 @@ body{
 	@include transition(1s);
 }
 
-.content-list li img{
+.content-list-masonry li img{
 	width: 100%;
 }
 
@@ -323,8 +329,8 @@ body{
 */
 
 .content-filter{
-	width: 59.5%;
-	background: #000;
+	width: 60px;
+	background: transparent;
 	height: 60px;
 	position: fixed;
 	top: 0;
@@ -332,17 +338,24 @@ body{
 	left: 20%;
 }
 
+
 .content-portfolio .content-list-masonry{
 }
 
 .content-filter-list{
-	padding: 0 40px;
+	padding: 0 20px;
+	position: relative;
 }
 
 .content-filter-list li{
-	display: inline;
+	display: none;
 	line-height: 60px;
 	margin-right: 40px;
+	opacity: 0;
+}
+
+.content-filter-list li:first-child{
+	margin-left: 20px;
 }
 
 .content-filter-list li a{
@@ -351,6 +364,94 @@ body{
 	font-family: $fontLink;
 	text-transform: uppercase;
 }
+
+.filter-menu-icon{
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	float: right;
+	font-family: 'fontello';
+	font-size: 32px;
+	line-height: 60px;
+	color: $colorLink+#555;
+	cursor: pointer;
+	text-align: center;	
+	background: #000;
+	opacity: 0.2;
+	@include transition(0.2s);
+}
+
+.filter-menu-icon:after{
+	content: '\e814';
+}
+
+.filter-menu-icon:hover{
+	opacity: 1;
+}
+
+.filterMenuOpened{
+	opacity: 1 !important;
+}
+
+/*
+	blog
+*/
+
+.content-list-blog{
+	height: 100%;
+}
+
+.content-list-blog li{
+	display: block;
+	background: #fff;
+	float: left;
+	width: 23%;
+	@include drop-shadow(0, 0, 1px, 1px, 0.2)
+}
+
+.content-item-blog-image{
+	width: 100%;
+}
+
+.content-item-blog-title{
+	padding: 20px;
+}
+
+.content-item-blog-title-link{
+	font-family: $fontTitle;
+	font-size: 20px;
+	color: $colorTitle;
+}
+
+.content-item-blog-text{
+	font-family: $fontText;
+	color: $colorText;
+	font-size: 14px;
+	line-height: 22px;
+	padding: 0 20px 20px;
+}
+
+
+/*
+	single
+*/
+
+.content-list-single {
+	width: 80%;
+	margin: auto;
+}
+
+.content-list-single li {
+	background: #fff;
+}
+
+
+
+
+
 
 /*
 fonts
