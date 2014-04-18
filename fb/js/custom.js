@@ -104,6 +104,54 @@ $(document).ready(function() {
 		}, 300);
 	});
 
+	var contentList = $('.content-list'),
+		contentItem = contentList.children('li');
+	contentItem.on('mouseover', function() {
+		console.log(contentList.scrollTop());
+		var $this = $(this),
+			height = $this.height(),
+			width = $this.width(),
+			top = $this.offset().top + $('.b-content').scrollTop(),
+			left = $this.offset().left - contentList.offset().left,
+			href = $this.find('.link').attr('href'),
+			zoom = $this.find('.image').attr('src'),
+			bg = $('.meta-wrap'),
+			imageLink = bg.find('.image-link'),
+			imageZoom = bg.find('.image-zoom'),
+			iconTop = height/2 - imageLink.height()/2,
+			iconLeft = width/2 - imageLink.width()/2;		
+
+		bg.css({
+			width: width,
+			height: height,
+			top: top,
+			left: left,
+			opacity: 1,
+			zIndex: 1
+		});
+
+		imageLink.animate({
+			left: iconLeft-40,
+			top: iconTop
+		});
+
+		imageZoom.animate({
+			left: iconLeft+40,
+			top: iconTop
+		});
+
+		// contentList.on('mouseleave', function() {
+		// 	bg.css({
+		// 	width: width+1000,
+		// 	height: height+1000,
+		// 	top: top-500,
+		// 	left: left-500,
+		// 	opacity: 0,
+		// 	zIndex: 0
+		// });
+
+		// })
+	});
 
 	
 
