@@ -54,7 +54,7 @@ body {
 
 .b-header {
   width: 20%;
-  background: #fff;
+  background: #f6f6f6;
   height: 100%;
   position: fixed;
   left: 0;
@@ -67,7 +67,7 @@ body {
   height: 100%;
   position: fixed;
   right: 0;
-  overflow: scroll; }
+  overflow-Y: scroll; }
 
 .b-footer {
   width: 100%;
@@ -160,10 +160,10 @@ body {
   left: 0;
   z-index: 2;
   background: rgba(0, 0, 0, 0.4);
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
   -webkit-box-shadow: inset 0 0 120px 40px rgba(255, 255, 255, 0.1);
   -moz-box-shadow: inset 0 0 120px 40px rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 120px 40px rgba(255, 255, 255, 0.1);
@@ -269,6 +269,32 @@ body {
 
 .g-active {
   color: #d34829 !important; }
+
+/*
+	portfolio
+*/
+.content-filter {
+  width: 59.5%;
+  background: #000;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  left: 20%; }
+
+.content-filter-list {
+  padding: 0 40px; }
+
+.content-filter-list li {
+  display: inline;
+  line-height: 60px;
+  margin-right: 40px; }
+
+.content-filter-list li a {
+  color: #d2d2d2;
+  font-size: 16px;
+  font-family: "cleanvel";
+  text-transform: uppercase; }
 
 /*
 fonts

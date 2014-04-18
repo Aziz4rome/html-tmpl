@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	function masonry() {
-		var ul = $('.content-list'),
+		var ul = $('.content-list-masonry'),
 			widthScreen = $(window).width(),
 			n = 0,
-			items = ul.find('li'),
+			items = ul.find('li:visible'),
 			liWidth = $(items[0]).outerWidth()+n,
 			liHeight = $(items[0]).outerHeight()+n,
 			total = 4;
@@ -30,10 +30,10 @@ $(document).ready(function() {
 	};
 	
 	setTimeout(function() {
-		var ul = $('.content-list'),
+		var ul = $('.content-list-masonry'),
 			widthScreen = $(window).width(),
 			n = 0,
-			items = ul.find('li'),
+			items = ul.find('li:visible'),
 			liWidth = $(items[0]).outerWidth()+n,
 			liHeight = $(items[0]).outerHeight()+n,
 			total = 4;
@@ -114,7 +114,7 @@ $(document).ready(function() {
 			top = $this.offset().top + $('.b-content').scrollTop(),
 			left = $this.offset().left - contentList.offset().left,
 			href = $this.find('.link').attr('href'),
-			zoom = $this.find('.image').attr('src'),
+			src = $this.find('.image').attr('src'),
 			bg = $('.meta-wrap'),
 			imageLink = bg.find('.image-link'),
 			imageZoom = bg.find('.image-zoom'),
@@ -133,26 +133,60 @@ $(document).ready(function() {
 		imageLink.animate({
 			left: iconLeft-40,
 			top: iconTop
-		});
+		}, speed).attr('href', href);
 
 		imageZoom.animate({
 			left: iconLeft+40,
 			top: iconTop
+		}, speed).attr('src', src);;
+
+		contentList.on('mouseleave', function() {
+			bg.css({
+			width: width+1000,
+			height: height+1000,
+			top: top-500,
+			left: left-500,
+			opacity: 0,
+			zIndex: 0
 		});
 
-		// contentList.on('mouseleave', function() {
-		// 	bg.css({
-		// 	width: width+1000,
-		// 	height: height+1000,
-		// 	top: top-500,
-		// 	left: left-500,
-		// 	opacity: 0,
-		// 	zIndex: 0
-		// });
-
-		// })
+		})
 	});
 
+	var filterList = $('.content-filter-list'),
+		filterLink = filterList.find('a');
+	filterLink.on('click', function(e) {
+		var $this = $(this),
+				filter = $this.text(),
+				itemsList = $('.content-list-masonry'),
+				items = itemsList.find('li');
+
+			itemsList.animate({
+				width: 0,
+				height: 0,
+				opacity: 0
+			}, function() {
+				items.each(function(index, elem) {
+					if (filter === 'all') {
+						$(elem).css('display', 'block').removeClass('hiddenElem');
+						return
+					}
+					else if ($(elem).attr('name') === filter) {
+						$(elem).css('display', 'block').removeClass('hiddenElem');
+					} else {
+						$(elem).css('display', 'none').addClass('hiddenElem');
+					}
+				});
+				setTimeout(function() {
+					itemsList.animate({						
+						opacity: 1,
+						width: 'auto',
+						height: 'auto'
+					}, masonry())
+				}, 200)
+			});
+			e.preventDefault();
+		});
 	
 
 
