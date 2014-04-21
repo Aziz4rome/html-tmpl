@@ -28,6 +28,45 @@ $(document).ready(function() {
 		}
 		
 	};
+
+	function masonryBlog() {
+			var ul = $('.content-list-blog'),
+				widthScreen = $('.b-content').width(),
+				n = 20,
+				items = ul.find('li'),
+				liWidth = $(items[0]).outerWidth()+n,
+				itemBlogWidth = $(items[0]).outerWidth(),
+				liHeight = $(items[0]).outerHeight()+n,
+				total = Math.floor(widthScreen/liWidth),
+				ulWidth = total*liWidth,
+				ulleft = widthScreen/2 - ulWidth/2;
+				console.log(liWidth, total, items.length, widthScreen);
+			ul.css({
+				position: 'absolute',
+				left: ulleft + 10,
+				width: liWidth
+			});
+			items.css({
+				position: 'absolute',
+				width: itemBlogWidth
+			});
+			var row = Math.floor(items.length/total);
+			for (var m = 0; m <= row; m++) {
+				for (var i = 0, k = 0; i < total; i++ ) {
+					var h = liHeight*k;
+					if((m+1)*total > total) {
+						h = $(items[i+ m*total-total]).outerHeight() + $(items[i+ m*total-total]).offset().top + 20 - ul.offset().top - $(items[0]).offset().top;
+					}
+					
+
+					$(items[i+ m*total]).css({
+						left: liWidth*i,
+						top: h + 40
+					});	
+				}
+					
+			}
+		}
 	
 	setTimeout(function() {
 		(function masonryGallery() {
@@ -100,6 +139,7 @@ $(document).ready(function() {
 
 	$(window).resize(function() {
 		masonry();
+		masonryBlog();
 	});
 
 
@@ -167,30 +207,33 @@ $(document).ready(function() {
 			top: top,
 			left: left,
 			opacity: 1,
-			zIndex: 1
+			zIndex: 1,
+			transform: 'rotate(0deg)'
 		});
 
 		imageLink.animate({
-			left: iconLeft-40,
+			left: iconLeft - 30,
 			top: iconTop
 		}, speed).attr('href', href);
 
 		imageZoom.animate({
-			left: iconLeft+40,
+			left: iconLeft + 30,
 			top: iconTop
-		}, speed).attr('src', src);;
+		}, speed).attr('src', src);
 
 		contentList.on('mouseleave', function() {
 			bg.css({
-			width: width+1000,
-			height: height+1000,
-			top: top-500,
-			left: left-500,
+			width: width + 1000,
+			height: height + 1000,
+			top: top - 500,
+			left: left - 500,
 			opacity: 0,
-			zIndex: 0
+			zIndex: 0,
+			transform: 'rotate(-90deg)'
 		});
 
-		})
+		});
+
 	});
 
 	var filterList = $('.content-filter-list'),
@@ -229,7 +272,17 @@ $(document).ready(function() {
 		});
 	
 
-	var contentFilter = $('.content-filter');
+	var contentFilter = $('.content-filter'),
+		filterLi = contentFilter.find('li'),
+		contentFilterWidth = contentFilter.width();
+	contentFilter.css({
+		width: 60
+	});
+	filterLi.css({
+		display: 'none',
+		opacity: 0
+	});
+
 	$('.filter-menu-icon').on('click', function() {
 		var $this = $(this),
 			filterItems = filterList.find('li');
@@ -251,7 +304,7 @@ $(document).ready(function() {
 			return
 		}
 		contentFilter.stop().css('background', '#000').animate({
-			width: '59.5%'
+			width: contentFilterWidth
 		}, 600, function() {
 			filterItems.css('display', 'inline').stop().animate({
 				opacity: 1

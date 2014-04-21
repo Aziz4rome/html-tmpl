@@ -58,7 +58,9 @@ body {
   height: 100%;
   position: fixed;
   left: 0;
-  box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.4);
   z-index: 10; }
 
 .b-content {
@@ -67,27 +69,18 @@ body {
   height: 100%;
   position: fixed;
   right: 0;
-  overflow-Y: scroll; }
-
-.b-footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  height: 60px;
-  background: #2a2a2a;
-  border-top: 1px solid #080808; }
+  overflow-y: scroll; }
 
 .logo-wrap {
-  width: 100% -40px;
-  margin-bottom: 40px;
+  width: 100%;
   text-align: center;
-  padding: 0 20px; }
+  margin-bottom: 40px; }
 
 .logo {
   font-size: 30px;
   width: 100%;
-  border-bottom: 1px solid #464646;
-  padding: 20px 0; }
+  border-bottom: 1px solid #8a8a8a;
+  padding: 40px 0; }
 
 .logo-link {
   font-family: "ShellyAllegroCRegular";
@@ -155,7 +148,7 @@ body {
 .meta-wrap {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 1000px;
   top: 0;
   left: 0;
   z-index: 2;
@@ -167,6 +160,10 @@ body {
   -webkit-box-shadow: inset 0 0 120px 40px rgba(255, 255, 255, 0.1);
   -moz-box-shadow: inset 0 0 120px 40px rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 120px 40px rgba(255, 255, 255, 0.1);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
   overflow: hidden;
   width: 0; }
 
@@ -184,7 +181,15 @@ body {
   background: rgba(255, 255, 255, 0.6);
   font: 16px/40px 'fontello';
   text-align: center;
-  color: #fff; }
+  color: #fff;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s; }
+
+.image-link:hover, .image-zoom:hover {
+  color: #7d7d7d;
+  background: #fff; }
 
 .image-describe {
   color: #ebebeb;
@@ -193,9 +198,12 @@ body {
   text-align: center;
   padding: 20px; }
 
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+
 .copyright {
-  float: left;
-  width: 20%;
   font-family: "clear_sans_thinregular";
   font-size: 14px;
   color: #5a5a5a;
@@ -205,8 +213,8 @@ body {
   z-index: 11; }
 
 .social-list {
-  float: right;
-  padding-right: 20px; }
+  padding: 20px;
+  text-align: center; }
 
 .social-list li {
   display: inline-block;
@@ -222,11 +230,10 @@ body {
 
 .social-list li a {
   display: block;
-  float: left;
   width: 40px;
   height: 40px;
   font-family: 'fontello';
-  color: #fff;
+  color: #7d7d7d;
   font-size: 14px;
   line-height: 40px;
   position: absolute;
@@ -274,7 +281,7 @@ body {
 	portfolio
 */
 .content-filter {
-  width: 60px;
+  width: auto;
   background: transparent;
   height: 60px;
   position: fixed;
@@ -282,18 +289,18 @@ body {
   z-index: 2;
   left: 20%; }
 
+.content-filter-inner-wrap {
+  position: relative; }
+
 .content-filter-list {
-  padding: 0 20px;
+  padding: 0 30px 0 40px;
   position: relative; }
 
 .content-filter-list li {
-  display: none;
+  display: inline-block;
   line-height: 60px;
   margin-right: 40px;
-  opacity: 0; }
-
-.content-filter-list li:first-child {
-  margin-left: 20px; }
+  opacity: 1; }
 
 .content-filter-list li a {
   color: #d2d2d2;
@@ -369,7 +376,9 @@ body {
 */
 .content-list-single {
   width: 80%;
-  margin: auto; }
+  -webkit-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 0 2px 0 rgba(0, 0, 0, 0.3); }
 
 .content-list-single li {
   background: #fff; }

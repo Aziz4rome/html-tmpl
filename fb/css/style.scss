@@ -20,11 +20,11 @@ $colorLinkHover : #303030;
 	-o-transition:      $transition;  
 }
 
-@mixin rotateY($deg) {
-	-webkit-transform: rotateY($deg);
-	-moz-transform: 	 rotateY($deg);
-	-ms-transform: 		 rotateY($deg);
-	-o-transform: 		 rotateY($deg);
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: 	 rotate($deg);
+	-ms-transform: 		 rotate($deg);
+	-o-transform: 		 rotate($deg);
 }
 
 @mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
@@ -79,7 +79,7 @@ body{
 	height: 100%;
 	position: fixed;
 	left: 0;
-	box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.4);
+	@include drop-shadow(1px, 0, 2px, 0, 0.4);
 	z-index: 10;
 }
 
@@ -89,34 +89,26 @@ body{
 	height: 100%;
 	position: fixed;
 	right: 0;	
-	overflow-Y: scroll;
+	overflow-y: scroll;
 }
 
-.b-footer{
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-	height: 60px;
-	background: #2a2a2a;
-	border-top: 1px solid #2a2a2a - #222;
-}
+
 
 .header{
 	
 }
 
 .logo-wrap{
-	width: 100% -40px;
-	margin-bottom: 40px;
+	width: 100%;
 	text-align: center;
-	padding: 0 20px;
+	margin-bottom: 40px;
 }
 
 .logo{
 	font-size: 30px;
 	width: 100%;	
-	border-bottom: 1px solid $borderColorDark;
-	padding: 20px 0;
+	border-bottom: 1px solid $borderColorMedium;
+	padding: 40px 0;
 }
 
 .logo-link{	
@@ -162,6 +154,9 @@ body{
 	color: #fff;
 }
 
+.header-menu li:first-child a{
+
+}
 
 .content{
 	position: relative;
@@ -195,13 +190,14 @@ body{
 .meta-wrap{
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 1000px;
 	top: 0;
 	left: 0;
 	z-index: 2;
 	background: rgba(0, 0, 0, 0.4);
 	@include transition(0.6s);
 	@include inner-shadow(0, 0, 120px, 40px, 0.1);
+	@include rotate(-90deg);
 	overflow: hidden;
 	width: 0;
 }
@@ -222,6 +218,12 @@ body{
 	font: 16px/40px 'fontello';
 	text-align: center;
 	color: #fff;
+	@include transition(0.2s);
+}
+
+.image-link:hover, .image-zoom:hover{
+	color: $colorLink;
+	background: #fff;
 }
 
 .image-describe{
@@ -232,10 +234,15 @@ body{
 	padding: 20px;
 }
 
+.footer{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+
 
 .copyright{
-	float: left;
-	width: 20%;
 	font-family: $fontTitle;
 	font-size: 14px;
 	color: $colorTitle;
@@ -246,8 +253,8 @@ body{
 }
 
 .social-list{
-	float: right;
-	padding-right: 20px;
+	padding: 20px;
+	text-align: center;
 }
 
 .social-list li{
@@ -262,11 +269,10 @@ body{
 
 .social-list li a{
 	display: block;
-	float: left;
 	width: 40px;
 	height: 40px;
 	font-family: 'fontello';
-	color: #fff;
+	color: $colorLink;
 	font-size: 14px;
 	line-height: 40px;
 	position: absolute;
@@ -324,12 +330,20 @@ body{
 }
 
 
+
+
+
+
+
 /*
 	portfolio
 */
 
+
+
+
 .content-filter{
-	width: 60px;
+	width: auto;
 	background: transparent;
 	height: 60px;
 	position: fixed;
@@ -342,20 +356,20 @@ body{
 .content-portfolio .content-list-masonry{
 }
 
+.content-filter-inner-wrap{
+	position: relative;
+}
+
 .content-filter-list{
-	padding: 0 20px;
+	padding: 0 30px 0 40px;
 	position: relative;
 }
 
 .content-filter-list li{
-	display: none;
+	display: inline-block;
 	line-height: 60px;
 	margin-right: 40px;
-	opacity: 0;
-}
-
-.content-filter-list li:first-child{
-	margin-left: 20px;
+	opacity: 1;
 }
 
 .content-filter-list li a{
@@ -441,7 +455,8 @@ body{
 
 .content-list-single {
 	width: 80%;
-	margin: auto;
+	@include drop-shadow(1px, 0, 2px, 0, 0.3);
+
 }
 
 .content-list-single li {
