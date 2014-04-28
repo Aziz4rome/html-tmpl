@@ -1,0 +1,575 @@
+$fontText          : 'arimoregular';
+$fontLink          : 'neristhin';
+$fontTitle         : 'clear_sans_thinregular';
+$fontMeta          : 'arial';
+$fontLogo		   : 'perforamaregular';
+
+$colorText         : #000;
+$colorLink         : #000;
+$colorTitle        : #000;
+$colorMeta         : #000;
+$colorLogo         : #000;
+$color             : #000;
+
+$borderColorLight  : #000;
+$borderColorMedium : #000;
+$borderColorDark   : #000;
+
+@mixin box-shadow ($string) {
+	-webkit-box-shadow: $string;
+	-moz-box-shadow:    $string;
+	box-shadow:         $string;
+}
+@mixin drop-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow:	$x $y $blur $spread rgba(0, 0, 0, $alpha);
+	-moz-box-shadow:	$x $y $blur $spread rgba(0, 0, 0, $alpha);
+	box-shadow:		$x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+@mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+	-moz-box-shadow:    inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+	box-shadow:         inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+@mixin drop-light ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow:	$x $y $blur $spread rgba(255, 255, 255, $alpha);
+	-moz-box-shadow:	$x $y $blur $spread rgba(255, 255, 255, $alpha);
+	box-shadow:		$x $y $blur $spread rgba(255, 255, 255, $alpha);
+}
+@mixin inner-light ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow: inset $x $y $blur $spread rgba(255, 255, 255, $alpha);
+	-moz-box-shadow:    inset $x $y $blur $spread rgba(255, 255, 255, $alpha);
+	box-shadow:         inset $x $y $blur $spread rgba(255, 255, 255, $alpha);
+}
+@mixin box-sizing ($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing:    $type;
+	box-sizing:         $type;
+}
+@mixin transition ($transition) {
+	-webkit-transition: $transition;  
+	-moz-transition:    $transition;
+	-ms-transition:     $transition; 
+	-o-transition:      $transition;  
+}
+@mixin rotate ($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: 	 rotate($deg);
+	-ms-transform: 		 rotate($deg);
+	-o-transform: 		 rotate($deg);
+}
+@mixin rotslate ($deg, $x, $y) {
+	-webkit-transform:       rotate($deg) translate($x, $y);
+	-moz-transform: 	 rotate($deg) translate($x, $y);
+	-ms-transform: 		 rotate($deg) translate($x, $y);
+	-o-transform: 		 rotate($deg) translate($x, $y);
+}
+@mixin transform-origin ($x, $y) {
+	-webkit-transform-origin: $x $y;
+	-moz-transform-origin:    $x $y;
+	-ms-transform-origin:     $x $y;
+	-o-transform-origin:      $x $y;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+}
+html { height: 101%; } /* always display scrollbars */
+body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, Verdana, sans-serif; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; } 
+
+input { outline: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+a { text-decoration: none; }
+
+/*
+	start properties
+*/
+
+.b-header, .b-features, .b-recent-works, .b-what-think-about-us, .b-footer{
+	width: 100%;
+	clear: both;
+	padding: 40px 0;
+}
+
+.header, .features, .recent-works, .what-think-about-us, .footer{
+	width: 940px;
+	clear: both;
+	margin: auto;
+	position: relative;
+}
+
+
+.b-header{
+	background: #000;
+	opacity: 0.4;
+	padding: 0;
+}
+
+.header{
+	padding: 30px 0;
+}
+
+.logo-wrap{
+	height: 20px;
+}
+
+.logo{
+	font: 20px/20px $fontLogo;
+	color: $colorLogo + #fff;
+}
+
+.nav{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.header-menu li{
+	display: inline;
+}
+
+.header-menu li a{
+	display: block;
+	float: left;
+	height: 60px;
+	padding: 10px 20px;
+	font: 16px/60px $fontLink;
+	color: $colorLink + #fff;
+}
+
+.section-title{
+	font: 20px/20px $fontTitle;
+	color: $colorTitle;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.features-list{
+	overflow: hidden;
+}
+
+.features-item{
+	display: block;
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+	position: relative;
+}
+
+.features-item:last-child{
+	margin-right: 0;
+}
+
+.features-item-link{
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: relative;
+}
+
+.features-item-icon{
+	font: 60px/80px 'fontello';
+	text-align: center;
+	color: $color;
+}
+
+.features-item-icon-save:after{
+	content: '\e816';
+}
+
+.features-item-icon-garanty:after{
+	content: '\e815';
+}
+
+.features-item-icon-quality:after{
+	content: '\e817';
+}
+
+.b-recent-works{
+	background: url('../images/recent-works-bg.jpg') fixed no-repeat;
+	background-size: 100%;
+}
+
+.hex-wrap{
+	height: 80px;
+	padding: 56px 0;
+	margin-bottom: 20px;
+}
+
+.features-item-title{
+	font: 20px/20px $fontTitle;
+	color: $colorTitle;
+	text-align: center;
+}
+
+.recent-works-list{
+	overflow: hidden;
+	text-align: center;
+	white-space: 5px;
+	position: relative;
+}
+
+.recent-works-list-item{
+	display: inline-block;
+	padding: 40px 0;
+	width: 140px;
+	margin-right: 15px;
+	margin-bottom: -20px;
+}
+
+.recent-works-list-item:nth-child(6){
+	margin-right: 0;
+}
+
+.recent-works-list-item:nth-child(7){
+	margin-left: 15px;
+}
+
+.recent-works-list-item:nth-child(12){
+	margin-left: 15px;
+	margin-bottom: 0;
+}
+
+.recent-works-list-item:last-child{
+	margin-bottom: 0;
+}
+
+.what-think-about-us-list{
+	overflow: hidden;
+}
+
+.what-think-about-us-list-item{
+	display: block;
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.what-think-about-us-list-item:nth-child(3n){
+	margin-right: 0;
+}
+
+.what-think-about-us-list-item-icon{
+	font: 24px/24px 'fontello';
+	text-align: center;
+	margin-bottom: 10px;
+	display: block;
+}
+
+
+.what-think-about-us-list-item-icon-support:after{ content: '\e818';}
+
+.what-think-about-us-list-item-icon-retina:after{ content: '\e816';}
+
+.what-think-about-us-list-item-icon-responsive:after{ content: '\e81a';}
+
+.what-think-about-us-list-item-icon-slider:after{ content: '\e81b';}
+
+.what-think-about-us-list-item-icon-seo:after{ content: '\e819';}
+
+.what-think-about-us-list-item-icon-sass:after{ content: '\e81c';}
+
+.what-think-about-us-list-item-icon-customize:after{ content: '\e81e';}
+
+.what-think-about-us-list-item-icon-ui:after{ content: '\e81f';}
+
+.what-think-about-us-list-item-icon-refresh:after{ content: '\e820';}
+
+
+
+.what-think-about-us-list-item-title{
+	font: 16px/16px $fontTitle;
+	color: $colorTitle;
+	margin-bottom: 20px;
+}
+
+.what-think-about-us-list-item-text{
+	font: 14px/22px $fontText;
+	color: $colorText;
+}
+
+.hex{
+	display: block;
+	width: 140px;
+	height: 81px;
+	background: url('../images/2.jpg') no-repeat;
+	background-size: auto 172px;
+	background-position: 50% 50%;
+	position: relative;
+	margin: auto;
+	z-index: 1;
+}
+
+.top, .bottom{
+	display: block;
+	background: inherit;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 0;
+	border: inherit;
+	box-sizing: inherit;
+}
+
+.top{
+	@include rotate(60deg);
+}
+
+.bottom{
+	@include rotate(-60deg);
+}
+
+.top-link, .bottom-link{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;	
+}
+
+.top-link{
+	@include rotate(60deg);
+}
+
+.bottom-link{
+	@include rotate(-60deg);
+}
+
+.top:after, .bottom:after{
+	display: block;
+	content: '';
+	background: inherit;
+	width: 172px;
+	height: 172px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	border: inherit;
+	box-sizing: inherit;
+}
+
+.top:after{	
+	@include rotslate(-60deg, -86px, -5px);
+	@include transform-origin (0, 0);
+}
+
+.bottom:after{
+	@include rotslate(60deg, -16px, -126px);
+	@include transform-origin (0, 0);
+}
+
+.features-item-hex{
+
+	background: #fff;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	text-align: center;
+	box-sizing: border-box;
+	height: 80px;
+}
+
+.features-item-hex{
+
+}
+
+.hex-wrap-after{
+	top: 0;
+	position: absolute;
+	z-index: -1;
+	width: 300px;
+}
+
+.hex-inner-wrap-after{
+	width: 180px;
+	margin: auto;
+}
+
+.hex-after{
+	background: #ff3030 !important;
+	width: 140px;
+	height: 80px;
+	opacity: 0;
+	@include transition(0.2s);
+}
+
+.hex-wrap-after-after{
+	top: 0;
+	position: absolute;
+	z-index: -1;
+	width: 300px;
+}
+
+.hex-inner-wrap-after-after{
+	width: 180px;
+	margin: auto;
+}
+
+.hex-after-after{
+	background: #ff3030 !important;
+	width: 140px;
+	height: 80px;
+	opacity: 0;
+	@include transition(0.2s);
+}
+
+.b-footer{
+	background: #668845;
+}
+
+.footer{
+	overflow: hidden;
+}
+
+.footer-widget{
+	width: 300px;
+	float: left;
+	margin-right: 20px;
+}
+
+.footer-widget:last-of-type{
+	margin-right: 0;
+}
+
+.footer-widget-title{
+	font: 16px/16px $fontTitle;
+	color: $colorTitle;
+	margin-bottom: 20px;
+}
+
+.footer-widget-menu ul li a{
+	display: block;
+	width: 100%;
+	padding: 20px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	font: 16px/16px $fontLink;
+	color: $colorLink;
+}
+
+.footer-widget-menu ul li:first-child a{
+	border-top: none;
+}
+
+.footer-widget-menu ul li:last-child a{
+	border-bottom: none;
+}
+
+.footer-widget-recent-posts-link{
+	display: block;
+	overflow: hidden;
+	padding: 20px 0;	
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-widget-recent-posts ul li:first-child a{
+	border-top: none;
+}
+
+.footer-widget-recent-posts ul li:last-child a{
+	border-bottom: none;
+}
+
+.footer-widget-recent-posts-thumb{
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin-right: 10px;
+}
+
+.footer-widget-recent-posts-title{
+	font: 16px/22px $fontTitle;
+	color: $colorTitle;
+	margin-bottom: 10px;
+}
+
+.footer-widget-recent-posts-meta{
+	font: 14px/22px $fontMeta;
+	display: block;
+	color: $colorMeta;
+	margin-left: 90px;
+}
+
+
+
+/*
+	fonts
+*/
+
+
+@font-face {
+    font-family: 'neristhin';
+    src: url('../fonts/neris-thin.eot');
+    src: url('../fonts/neris-thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/neris-thin.woff') format('woff'),
+         url('../fonts/neris-thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'perforamaregular';
+    src: url('../fonts/perforama.eot');
+    src: url('../fonts/perforama.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/perforama.woff') format('woff'),
+         url('../fonts/perforama.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'clear_sans_thinregular';
+    src: url('../fonts/clearsans-thin.eot');
+    src: url('../fonts/clearsans-thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clearsans-thin.woff') format('woff'),
+         url('../fonts/clearsans-thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'arimoregular';
+    src: url('../fonts/arimo-regular.eot');
+    src: url('../fonts/arimo-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/arimo-regular.woff') format('woff'),
+         url('../fonts/arimo-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?18585828');
+  src: url('../fonts/fontello.eot?18585828#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?18585828') format('woff'),
+       url('../fonts/fontello.ttf?18585828') format('truetype'),
+       url('../fonts/fontello.svg?18585828#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
