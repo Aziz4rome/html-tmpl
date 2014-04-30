@@ -5,7 +5,11 @@
 	<title>Fblog</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-thumbs.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox-thumbs.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
 </head>
 <body>
@@ -38,37 +42,37 @@
 <section class="b-content">
 	<section class="content">
 		<ul class="content-list content-list-masonry">
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
-			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="#" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>		
-			<div class="meta-wrap"><div class="meta-inner-wrap"><a href="#" class="image-zoom"></a><a href="#" class="image-link"></a><p class="image-describe">Lorem ipsum set amet</p></div></div>	
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/1.jpg" rel="gallery1" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/2.jpg" rel="gallery1" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/3.jpg" rel="gallery1" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/4.jpg" rel="gallery1" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/5.jpg" rel="gallery1" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/1.jpg" rel="gallery1" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/2.jpg" rel="gallery1" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/3.jpg" rel="gallery1" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/4.jpg" rel="gallery1" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/5.jpg" rel="gallery1" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/1.jpg" rel="gallery1" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/2.jpg" rel="gallery1" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/3.jpg" rel="gallery1" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/4.jpg" rel="gallery1" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/5.jpg" rel="gallery1" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/1.jpg" rel="gallery1" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/2.jpg" rel="gallery1" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/3.jpg" rel="gallery1" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/4.jpg" rel="gallery1" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/5.jpg" rel="gallery1" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/1.jpg" rel="gallery1" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/2.jpg" rel="gallery1" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/3.jpg" rel="gallery1" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/4.jpg" rel="gallery1" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/5.jpg" rel="gallery1" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/1.jpg" rel="gallery1" class="link"><img src="images/1.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/2.jpg" rel="gallery1" class="link"><img src="images/2.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/3.jpg" rel="gallery1" class="link"><img src="images/3.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/4.jpg" rel="gallery1" class="link"><img src="images/4.jpg" class="image"></a></div></div></li>
+			<li><div class="content-list-item-inner-wrap"><div class="image-wrap"><a href="images/5.jpg" rel="gallery1" class="link"><img src="images/5.jpg" class="image"></a></div></div></li>		
+			<div class="meta-wrap"><div class="meta-inner-wrap"><a href="" class="image-zoom" rel="gallery2"></a><a href="#" class="image-link"></a><p class="image-describe">Lorem ipsum set amet</p></div></div>	
 		</ul>
 	</section>
 </section>

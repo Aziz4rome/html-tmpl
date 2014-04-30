@@ -5,7 +5,11 @@ $(document).ready(function() {
 			hexagon = $this.find('.hex-after'),
 			hegondAfter = $this.find('.hex-after-after'),
 			hexagondWrap = $this.find('.hex-wrap-after'),
-			hexagondWrapAfter = $this.find('.hex-wrap-after-after');
+			hexagondWrapAfter = $this.find('.hex-wrap-after-after'),
+			hexagonIcon = $this.find('.features-item-icon');
+		hexagonIcon.css({
+			color: 'red'
+		});
 		hexagon.css({
 			width: 150,
 			height: 86,
@@ -27,7 +31,11 @@ $(document).ready(function() {
 			hexagon = $this.find('.hex-after'),
 			hegondAfter = $this.find('.hex-after-after'),
 			hexagondWrap = $this.find('.hex-wrap-after'),
-			hexagondWrapAfter = $this.find('.hex-wrap-after-after');
+			hexagondWrapAfter = $this.find('.hex-wrap-after-after'),
+			hexagonIcon = $this.find('.features-item-icon');
+		hexagonIcon.css({
+			color: 'black'
+		});
 		hexagon.css({
 			width: 140,
 			height: 80,
@@ -44,5 +52,27 @@ $(document).ready(function() {
 		hexagondWrapAfter.css({
 			top: 0
 		});
+	});
+
+	$('.hex-recent-post-link').on('mouseover', function() {
+		var $this = $(this),
+			$thisParent = $this.parent('.hex-recent-works-after'),
+			$thisIcon = $thisParent.find('.hex-recent-post-link-icon');
+		$thisParent.stop().animate({
+			opacity: 1
+		}, 200);
+		$thisIcon.stop().animate({
+			top: 0
+		}, 200)
+	}).on('mouseleave', function() {
+		var $this = $(this),
+			$thisParent = $this.parent('.hex-recent-works-after'),
+			$thisIcon = $thisParent.find('.hex-recent-post-link-icon');
+		$thisParent.stop().animate({
+			opacity: 0
+		}, 200);
+		$thisIcon.stop().animate({
+			top: '-110%'
+		}, 200)
 	});
 });

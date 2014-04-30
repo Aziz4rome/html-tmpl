@@ -187,19 +187,21 @@ $(document).ready(function() {
 	var contentList = $('.content-list'),
 		contentItem = contentList.children('li');
 	contentItem.on('mouseover', function() {
-		console.log(contentList.scrollTop());
+		
 		var $this = $(this),
 			height = $this.height(),
 			width = $this.width(),
 			top = $this.offset().top + $('.b-content').scrollTop(),
 			left = $this.offset().left - contentList.offset().left,
+			currentLink = $this.find('.link'),
 			href = $this.find('.link').attr('href'),
 			src = $this.find('.image').attr('src'),
+			rel = $this.find('.link').attr('rel'),
 			bg = $('.meta-wrap'),
 			imageLink = bg.find('.image-link'),
 			imageZoom = bg.find('.image-zoom'),
 			iconTop = height/2 - imageLink.height()/2,
-			iconLeft = width/2 - imageLink.width()/2;		
+			iconLeft = width/2 - imageLink.width()/2;
 
 		bg.css({
 			width: width,
@@ -219,7 +221,7 @@ $(document).ready(function() {
 		imageZoom.animate({
 			left: iconLeft + 30,
 			top: iconTop
-		}, speed).attr('src', src);
+		}, speed).attr('href', src);
 
 		contentList.on('mouseleave', function() {
 			bg.css({
@@ -232,6 +234,11 @@ $(document).ready(function() {
 			transform: 'rotate(-90deg)'
 		});
 
+		});
+
+		imageZoom.on('click', function(e) {
+			currentLink.click();
+			e.preventDefault();
 		});
 
 	});
@@ -313,6 +320,8 @@ $(document).ready(function() {
 		$this.addClass('filterMenuOpened');
 
 	});
+
+	$('.link').fancybox();
 
 
 });

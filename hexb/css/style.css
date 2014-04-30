@@ -119,7 +119,13 @@ a {
 .features-item-icon {
   font: 60px/80px 'fontello';
   text-align: center;
-  color: black; }
+  color: black;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s; }
 
 .features-item-icon-save:after {
   content: '\e816'; }
@@ -155,7 +161,9 @@ a {
   padding: 40px 0;
   width: 140px;
   margin-right: 15px;
-  margin-bottom: -20px; }
+  margin-bottom: -20px;
+  position: relative;
+  overflow: hidden; }
 
 .recent-works-list-item:nth-child(6) {
   margin-right: 0; }
@@ -262,12 +270,13 @@ a {
   -ms-transform: rotate(-60deg);
   -o-transform: rotate(-60deg); }
 
-.top-link, .bottom-link {
+.top-link, .bottom-link, .hex-link {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 2; }
 
 .top-link {
   -webkit-transform: rotate(60deg);
@@ -361,6 +370,36 @@ a {
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
   -o-transition: 0.2s; }
+
+.hex-recent-works-wrap-after {
+  width: 140px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40px 0px; }
+
+.hex-recent-works-inner-wrap-after {
+  width: 140px;
+  height: 80px;
+  margin: auto; }
+
+.hex-recent-works-after {
+  background: red;
+  opacity: 0; }
+
+.hex-recent-post-link-icon {
+  font: 24px/80px 'fontello';
+  color: #fff;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  top: -110%; }
+
+.hex-recent-post-link-icon:after {
+  content: '\e804'; }
 
 .b-footer {
   background: #668845; }

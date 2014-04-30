@@ -357,7 +357,7 @@ body {
   width: 100%; }
 
 .content-item-blog-title {
-  padding: 20px; }
+  padding: 20px 20px 10px; }
 
 .content-item-blog-title-link {
   font-family: "clear_sans_thinregular";
@@ -370,6 +370,40 @@ body {
   font-size: 14px;
   line-height: 22px;
   padding: 0 20px 20px; }
+
+.content-item-blog-meta-date {
+  display: block;
+  margin-bottom: 20px;
+  font: 12px/12px "clear_sans_thinregular";
+  color: #a7a7a7;
+  padding: 0 20px; }
+
+.content-item-blog-meta-wrap {
+  padding: 20px;
+  border-top: 1px solid #d9d9d9;
+  position: relative; }
+
+.content-item-blog-meta-views,
+.content-item-blog-meta-comments,
+.content-item-blog-meta-category,
+.content-item-blog-meta-tags,
+.content-item-blog-meta-likes {
+  color: #858585;
+  display: block;
+  font: 12px/20px "clear_sans_thinregular";
+  margin-bottom: 5px; }
+
+.content-item-blog-meta-comments a,
+.content-item-blog-meta-category a,
+.content-item-blog-meta-tags a {
+  color: #a7a7a7;
+  display: inline;
+  font: 12px/20px "clear_sans_thinregular"; }
+
+.content-item-blog-meta-likes {
+  position: absolute;
+  top: 20px;
+  right: 20px; }
 
 /*
 	single

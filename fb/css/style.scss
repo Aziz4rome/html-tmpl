@@ -431,7 +431,7 @@ body{
 }
 
 .content-item-blog-title{
-	padding: 20px;
+	padding: 20px 20px 10px;
 }
 
 .content-item-blog-title-link{
@@ -448,6 +448,44 @@ body{
 	padding: 0 20px 20px;
 }
 
+.content-item-blog-meta-date{
+	display: block;
+	margin-bottom: 20px;
+	font: 12px/12px $fontTitle;
+	color: $colorText + #333;
+	padding: 0 20px;
+}
+
+.content-item-blog-meta-wrap{
+	padding: 20px;
+	border-top: 1px solid $borderColorLight;
+	position: relative;
+}
+
+.content-item-blog-meta-views,
+.content-item-blog-meta-comments,
+.content-item-blog-meta-category,
+.content-item-blog-meta-tags,
+.content-item-blog-meta-likes {
+	color: $colorText + #111;
+	display: block;
+	font: 12px/20px $fontTitle;
+	margin-bottom: 5px;
+}
+
+.content-item-blog-meta-comments a,
+.content-item-blog-meta-category a,
+.content-item-blog-meta-tags a {
+	color: $colorText + #333;
+	display: inline;
+	font: 12px/20px $fontTitle;
+}
+
+.content-item-blog-meta-likes{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
 
 /*
 	single
